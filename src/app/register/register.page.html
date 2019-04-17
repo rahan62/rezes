@@ -1,0 +1,58 @@
+<ion-header>
+    <ion-toolbar>
+        <ion-title>Register</ion-title>
+    </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-grid>
+        <ion-row>
+            <ion-col>
+
+            </ion-col>
+            <ion-col>
+                <ion-row>
+                    <ion-label padding>Username</ion-label>
+                    <ion-input padding [(ngModel)]="username" class="input-class" placeholder="Identity"></ion-input>
+                </ion-row>
+                <ion-row>
+                    <ion-label padding>Name</ion-label>
+                    <ion-input padding [(ngModel)]="name" class="input-class" placeholder="Name"></ion-input>
+                </ion-row>
+                <ion-row>
+                    <ion-label padding>Surname</ion-label>
+                    <ion-input padding [(ngModel)]="surname" class="input-class" placeholder="Surname"></ion-input>
+                </ion-row>
+                <ion-row>
+                    <ion-label padding>Password</ion-label>
+                    <ion-input padding [(ngModel)]="password" type="password" class="input-class" placeholder="Password"></ion-input>
+                </ion-row>
+                <ion-row>
+                    <ion-label padding>E-Mail</ion-label>
+                    <ion-input padding [(ngModel)]="email" class="input-class" placeholder="E-Mail"></ion-input>
+                </ion-row>
+                <ion-row>
+                    <ion-label padding>Identity</ion-label>
+                    <ion-input padding [(ngModel)]="identity" class="input-class" placeholder="Identity"></ion-input>
+                </ion-row>
+
+            </ion-col>
+            <ion-col>
+
+            </ion-col>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+
+            </ion-col>
+            <ion-col>
+                <ion-button padding class="button-class" routerDirection="forward" routerLink="/login">Back</ion-button>
+                <ion-button padding class="button-class" routerDirection="forward" (keyup.enter)="createUser()">Register
+                </ion-button>
+            </ion-col>
+            <ion-col>
+
+            </ion-col>
+        </ion-row>
+    </ion-grid>
+</ion-content>

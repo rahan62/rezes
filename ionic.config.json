@@ -1,0 +1,7 @@
+{
+  "name": "rezes",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular"
+}

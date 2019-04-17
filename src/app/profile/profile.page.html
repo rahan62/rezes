@@ -1,0 +1,16 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Profil</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-card *ngIf="currentUser" wrap>
+  <ion-card-header >
+    <ion-icon name="contact"></ion-icon>
+  </ion-card-header>
+  <ion-card-content>
+  {{currentUser.name}}
+  </ion-card-content>
+</ion-card>
+</ion-content>
