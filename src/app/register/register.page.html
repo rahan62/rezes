@@ -33,7 +33,7 @@
                 </ion-row>
                 <ion-row>
                     <ion-label padding>Identity</ion-label>
-                    <ion-input padding [(ngModel)]="identity" class="input-class" placeholder="Identity"></ion-input>
+                    <ion-input padding [(ngModel)]="identity" class="input-class" placeholder="Identity" (keyup.enter)="createUser()"></ion-input>
                 </ion-row>
 
             </ion-col>
@@ -47,7 +47,7 @@
             </ion-col>
             <ion-col>
                 <ion-button padding class="button-class" routerDirection="forward" routerLink="/login">Back</ion-button>
-                <ion-button padding class="button-class" routerDirection="forward" (keyup.enter)="createUser()">Register
+                <ion-button padding class="button-class" routerDirection="forward" (click)="createUser()">Register
                 </ion-button>
             </ion-col>
             <ion-col>

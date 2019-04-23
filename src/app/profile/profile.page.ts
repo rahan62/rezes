@@ -1,6 +1,8 @@
 import {Component, OnInit} from '@angular/core';
 import {AngularFireDatabase} from '@angular/fire/database';
 import {Router} from '@angular/router';
+import {MenuController} from '@ionic/angular';
+import {GlobalDataServiceService} from '../global-data-service.service';
 
 @Component({
     selector: 'app-profile',
@@ -9,15 +11,23 @@ import {Router} from '@angular/router';
 })
 export class ProfilePage implements OnInit {
 
+
     public currentUser: any;
 
-    constructor(public db: AngularFireDatabase, public router: Router) {
-        this.db.object('users1').snapshotChanges().subscribe(item => {
-            this.currentUser = item.payload.val();
-        });
+    constructor(public menuCtrl: MenuController,
+                public globaldata: GlobalDataServiceService,
+                public router: Router) {
+        this.currentUser = this.globaldata.data;
+
     }
 
     ngOnInit() {
+
+        console.log(this.currentUser);
+        if (!this.currentUser) {
+            console.log('debug');
+            this.router.navigateByUrl('/login');
+        }
     }
 
 }

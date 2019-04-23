@@ -3,6 +3,7 @@ import {MenuController} from '@ionic/angular';
 import {BarcodeScanner, BarcodeScannerOptions} from '@ionic-native/barcode-scanner/ngx';
 import {Router} from '@angular/router';
 import {AngularFireDatabase} from '@angular/fire/database';
+import {GlobalDataServiceService} from '../global-data-service.service';
 
 @Component({
     selector: 'app-register',
@@ -21,8 +22,11 @@ export class RegisterPage implements OnInit {
     encodeData: any;
     barcodeScannerOptions: BarcodeScannerOptions;
 
-    constructor(public menuCtrl: MenuController, private barcodeScanner: BarcodeScanner, public router: Router,
-                public db: AngularFireDatabase) {
+    constructor(public menuCtrl: MenuController,
+                private barcodeScanner: BarcodeScanner,
+                public router: Router,
+                public db: AngularFireDatabase,
+                public globalDataService: GlobalDataServiceService) {
         this.db.list('users1/').snapshotChanges().subscribe(items => {
             this.users = items.map(item => {
                 return item.payload.val();
@@ -47,10 +51,11 @@ export class RegisterPage implements OnInit {
                 'identity': this.identity,
                 'type': 'customer'
             };
+
         }
 
-        this.users.push(this.user);
-        this.db.object('users1/').set(this.users);
+
+        this.db.object('users1/' + this.username).set(this.user);
         this.router.navigateByUrl('/login');
     }
 }
