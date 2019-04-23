@@ -19,6 +19,7 @@
         <ion-card-title>REZES'e Hoşgeldiniz</ion-card-title>
       </ion-card-header>
       <ion-card-content>
+        <ion-label>{{metalCount}}</ion-label>
         <p>Yeşil bir dünyaya katkılarınız için teşekkür ederiz.</p>
       </ion-card-content>
     </ion-card>
@@ -34,13 +35,12 @@
         <ion-icon slot="start" color="medium" name="build"></ion-icon>
         <ion-label>Scaffold Out Your App</ion-label>
       </ion-item>
-      <ion-item href="https://ionicframework.com/docs/layout/structure">
-        <ion-icon slot="start" color="medium" name="grid"></ion-icon>
-        <ion-label>Change Your App Layout</ion-label>
-      </ion-item>
+
       <ion-item href="https://ionicframework.com/docs/theming/basics">
-        <ion-icon slot="start" color="medium" name="color-fill"></ion-icon>
-        <ion-label>Theme Your App</ion-label>
+
       </ion-item>
     </ion-list>
+  <ion-row>
+    <ion-button (click) = calculateMetal()></ion-button>
+  </ion-row>
 </ion-content>
