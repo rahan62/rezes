@@ -1,0 +1,24 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>machines</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>
+      <ion-label> <h2> Hizmet Noktalarımız </h2> </ion-label>
+    </ion-card-header>
+    <ion-card-content *ngFor="let data of machines">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            {{data.location}}
+            {{data.name}}
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
