@@ -1,9 +1,59 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>operation</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>operation</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
+    <ion-grid>
+        <ion-row justify-content-center>
+            <ion-button (click)="listPreviousTransactions()">Geçmiş işlemleri listele</ion-button>
+        </ion-row>
+        <ion-row>
+            <ion-col><ion-item>Tarih</ion-item></ion-col>
+            <ion-col><ion-item>Metal</ion-item></ion-col>
+            <ion-col><ion-item>Plastik</ion-item></ion-col>
+            <ion-col><ion-item>Cam</ion-item></ion-col>
+            <ion-col><ion-item>Tanımlanamayan</ion-item></ion-col>
+            <ion-col><ion-item>Makina</ion-item></ion-col>
+        </ion-row>
+        <ion-row *ngFor="let op of userTrans">
+            <ion-col>
+                <ion-item>
+                    {{op.date}}
+                </ion-item>
 
+            </ion-col>
+            <ion-col>
+                <ion-item>
+                    {{op.metal}}
+                </ion-item>
+
+            </ion-col>
+            <ion-col>
+                <ion-item>
+                    {{op.plastic}}
+                </ion-item>
+
+            </ion-col>
+            <ion-col>
+                <ion-item>
+                    {{op.glass}}
+                </ion-item>
+
+            </ion-col>
+            <ion-col>
+                <ion-item>
+                    {{op.unidentified}}
+                </ion-item>
+
+            </ion-col>
+            <ion-col>
+                <ion-item>
+                    {{op.machineName}}
+                </ion-item>
+
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-content>

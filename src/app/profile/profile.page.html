@@ -20,7 +20,12 @@
                 </ion-card>
             </ion-col>
 
+
         </ion-row>
     </ion-grid>
-
+<ion-row>
+    <ion-item>
+        <qrcode [qrdata]="myAngularxQrCode" [size]="256" [level]="'M'"></qrcode>
+    </ion-item>
+</ion-row>
 </ion-content>

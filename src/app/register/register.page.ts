@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {MenuController} from '@ionic/angular';
-import {BarcodeScanner, BarcodeScannerOptions} from '@ionic-native/barcode-scanner/ngx';
+
 import {Router} from '@angular/router';
 import {AngularFireDatabase} from '@angular/fire/database';
 import {GlobalDataServiceService} from '../global-data-service.service';
@@ -20,10 +20,7 @@ export class RegisterPage implements OnInit {
     public user: any;
     public username: string;
     encodeData: any;
-    barcodeScannerOptions: BarcodeScannerOptions;
-
     constructor(public menuCtrl: MenuController,
-                private barcodeScanner: BarcodeScanner,
                 public router: Router,
                 public db: AngularFireDatabase,
                 public globalDataService: GlobalDataServiceService) {

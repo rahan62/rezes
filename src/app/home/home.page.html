@@ -1,46 +1,110 @@
 <ion-header>
-  <ion-toolbar>
-<ion-row>
-  <ion-title>
-    Welcome {{currentUser.currentUsername}} !
-  </ion-title>
-  <ion-icon size="large" name="add-circle" balanced></ion-icon>
-</ion-row>
+    <ion-toolbar>
+        <ion-row>
+            <ion-title>
+                Welcome {{currentUser.currentUsername}} !
+            </ion-title>
+            <ion-icon size="large" name="add-circle" balanced></ion-icon>
+        </ion-row>
 
-  </ion-toolbar>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
-    <ion-card class="welcome-card">
-      <ion-img src="/assets/HomePage/rezes-background-3.jpg"></ion-img>
-      <ion-card-header>
-        <ion-card-subtitle></ion-card-subtitle>
-        <ion-icon class="icon-class" src="../../assets/Logo/rezes-logo-mini.svg"></ion-icon>
-        <ion-card-title>REZES'e Hoşgeldiniz</ion-card-title>
-      </ion-card-header>
-      <ion-card-content>
-        <ion-label>{{metalCount}}</ion-label>
-        <p>Yeşil bir dünyaya katkılarınız için teşekkür ederiz.</p>
-      </ion-card-content>
-    </ion-card>
-    <ion-list lines="none">
-      <ion-list-header>
-        <ion-label>Kaynaklar</ion-label>
-      </ion-list-header>
-      <ion-item routerDirection="forward" routerLink="/about">
-        <ion-icon routerDirection="forward" routerLink="/about" slot="start" color="medium" name="book"></ion-icon>
-        <ion-label routerDirection="forward" routerLink="/about">Hakkımızda</ion-label>
-      </ion-item>
-      <ion-item href="https://ionicframework.com/docs/building/scaffolding">
-        <ion-icon slot="start" color="medium" name="build"></ion-icon>
-        <ion-label>Scaffold Out Your App</ion-label>
-      </ion-item>
+    <ion-row justify-content-center>
+        <ion-card class="welcome-card" justify-content-center>
+            <!--<ion-img src="/assets/HomePage/rezes-background-3.jpg"></ion-img>-->
+            <ion-card-header justify-content-center>
+                <ion-icon class="icon-class" src="../../assets/Logo/rezes-logo-mini.svg"></ion-icon>
+                <ion-card-title>REZES'e Hoşgeldiniz</ion-card-title>
+            </ion-card-header>
+            <ion-card-content justify-content-center>
 
-      <ion-item href="https://ionicframework.com/docs/theming/basics">
 
-      </ion-item>
-    </ion-list>
-  <ion-row>
-    <ion-button (click) = calculateMetal()></ion-button>
-  </ion-row>
+                <p>Yeşil bir dünyaya katkılarınız için teşekkür ederiz.</p>
+            </ion-card-content>
+        </ion-card>
+    </ion-row>
+
+    <ion-grid>
+        <ion-row justify-content-center>
+            <ion-button style="green" (click)=calculateMetal() (click)="calculateGlass()" (click)=calculatePlastic()>
+                Calculate
+            </ion-button>
+        </ion-row>
+        <ion-row>
+            <ion-col>
+                <ion-card>
+                    <ion-card-header>
+                        <ion-label>Geri Dönüşüme Katılam Metal</ion-label>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <circle-progress [percent]="metalCount"
+                                         [radius]="30"
+                                         [outerStrokeWidth]="4"
+                                         [innerStrokeWidth]="2"
+                                         [outerStrokeColor]="'#125a05'"
+                                         [innerStrokeColor]="'#22ad0a'"
+                                         [animationDuration]="300"
+                                         [animation]=true
+                                         [unitsFontSize]="4"
+                                         [subtitleFontSize]="4"
+                                         [titleFontSize]="4">
+
+                        </circle-progress>
+                    </ion-card-content>
+                </ion-card>
+
+            </ion-col>
+            <ion-col>
+                <ion-card>
+                    <ion-card-header>
+                        <ion-label>Geri Dönüşüme Katılam Plastik</ion-label>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <circle-progress [percent]="plasticCount"
+                                         [radius]="30"
+                                         [outerStrokeWidth]="4"
+                                         [innerStrokeWidth]="2"
+                                         [outerStrokeColor]="'#125a05'"
+                                         [innerStrokeColor]="'#22ad0a'"
+                                         [animationDuration]="300"
+                                         [animation]=true
+                                         [unitsFontSize]="4"
+                                         [subtitleFontSize]="4"
+                                         [titleFontSize]="4">
+
+                        </circle-progress>
+                    </ion-card-content>
+                </ion-card>
+
+            </ion-col>
+            <ion-col>
+                <ion-card>
+                    <ion-card-header>
+                        <ion-label>Geri Dönüşüme Katılam Cam</ion-label>
+                    </ion-card-header>
+                    <ion-card-content>
+                        <circle-progress [percent]="glassCount"
+                                         [radius]="30"
+                                         [outerStrokeWidth]="4"
+                                         [innerStrokeWidth]="2"
+                                         [outerStrokeColor]="'#125a05'"
+                                         [innerStrokeColor]="'#22ad0a'"
+                                         [animationDuration]="300"
+                                         [animation]=true
+                                         [unitsFontSize]="4"
+                                         [subtitleFontSize]="4"
+                                         [titleFontSize]="4">
+
+                        </circle-progress>
+                    </ion-card-content>
+                </ion-card>
+
+            </ion-col>
+
+
+        </ion-row>
+    </ion-grid>
+
 </ion-content>

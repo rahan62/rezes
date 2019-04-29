@@ -13,6 +13,8 @@ export class HomePage implements OnInit {
     public currentUser: any;
     public transactions: any = [];
     public metalCount = 0;
+    public plasticCount = 0;
+    public glassCount = 0;
 
     constructor(public menuCtrl: MenuController,
                 public globaldata: GlobalDataServiceService,
@@ -41,7 +43,23 @@ export class HomePage implements OnInit {
         for (let i = 0; i < this.transactions.length; i++) {
             console.log(this.transactions[i].userName);
             if (this.transactions[i].userName === this.currentUser.currentUsername) {
-                this.metalCount = parseInt(this.transactions[i].metal, 10);
+                this.metalCount += parseInt(this.transactions[i].metal, 10);
+            }
+        }
+    }
+    calculatePlastic() {
+        for (let i = 0; i < this.transactions.length; i++) {
+            console.log(this.transactions[i].userName);
+            if (this.transactions[i].userName === this.currentUser.currentUsername) {
+                this.plasticCount += parseInt(this.transactions[i].plastic, 10);
+            }
+        }
+    }
+    calculateGlass() {
+        for (let i = 0; i < this.transactions.length; i++) {
+            console.log(this.transactions[i].userName);
+            if (this.transactions[i].userName === this.currentUser.currentUsername) {
+                this.glassCount += parseInt(this.transactions[i].glass, 10);
             }
         }
     }

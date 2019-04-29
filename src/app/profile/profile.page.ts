@@ -3,6 +3,7 @@ import {AngularFireDatabase} from '@angular/fire/database';
 import {Router} from '@angular/router';
 import {MenuController} from '@ionic/angular';
 import {GlobalDataServiceService} from '../global-data-service.service';
+import {QRCodeModule} from 'angularx-qrcode';
 
 @Component({
     selector: 'app-profile',
@@ -11,14 +12,15 @@ import {GlobalDataServiceService} from '../global-data-service.service';
 })
 export class ProfilePage implements OnInit {
 
-
+    public scannedData: any;
     public currentUser: any;
 
     constructor(public menuCtrl: MenuController,
                 public globaldata: GlobalDataServiceService,
-                public router: Router) {
+                public router: Router,
+                public qr: QRCodeModule
+    ) {
         this.currentUser = this.globaldata.data;
-
     }
 
     ngOnInit() {
@@ -29,5 +31,6 @@ export class ProfilePage implements OnInit {
             this.router.navigateByUrl('/login');
         }
     }
+
 
 }
