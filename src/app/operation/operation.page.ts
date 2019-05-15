@@ -20,7 +20,12 @@ export class OperationPage implements OnInit {
         });
 
     }
-
+    ionViewDidEnter() {
+        this.listPreviousTransactions();
+    }
+    ionViewDidLoad() {
+        this.listPreviousTransactions();
+    }
     ngOnInit() {
     }
     listPreviousTransactions() {

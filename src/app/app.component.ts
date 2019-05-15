@@ -28,9 +28,9 @@ export class AppComponent {
             icon: 'contact'
         },
         {
-            title: 'New Operation',
+            title: 'Operations',
             url: '/operation',
-            icon: 'add-circle-outline'
+            icon: 'Desktop'
         },
         {
             title: 'Achievements',

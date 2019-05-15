@@ -29,7 +29,30 @@ export class HomePage implements OnInit {
             });
         });
     }
-
+    ionViewDidEnter() {
+        console.log('ionViewDidEnter');
+        this.calculateMetal();
+        this.calculateGlass();
+        this.calculatePlastic();
+    }
+    ionViewDidLoad() {
+        console.log('ionViewDidLoad');
+        this.calculateMetal();
+        this.calculateGlass();
+        this.calculatePlastic();
+    }
+    ionViewWillEnter() {
+        console.log('ionViewWillEnter');
+        this.calculateMetal();
+        this.calculateGlass();
+        this.calculatePlastic();
+    }
+    ionViewWillLeave() {
+        console.log('ionViewWillLeave');
+        this.calculateMetal();
+        this.calculateGlass();
+        this.calculatePlastic();
+    }
     ngOnInit() {
         this.menuCtrl.enable(true);
         this.menuCtrl.open();
@@ -37,8 +60,14 @@ export class HomePage implements OnInit {
         if (!this.globaldata.data) {
             this.router.navigateByUrl('/login');
         }
+        console.log('ionViewWillLeave');
+        this.calculateMetal();
+        this.calculateGlass();
+        this.calculatePlastic();
 
     }
+
+
     calculateMetal() {
         for (let i = 0; i < this.transactions.length; i++) {
             console.log(this.transactions[i].userName);

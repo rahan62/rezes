@@ -1,50 +1,20 @@
-<ion-header>
+<ion-header xmlns:filter="http://www.w3.org/1999/xhtml">
   <ion-toolbar>
     <ion-title>achievements</ion-title>
   </ion-toolbar>
 </ion-header>
-
 <ion-content>
-<ion-grid>
-  <ion-row>
-    <ion-col [size]="3">
-      <ion-card>
-        <ion-card-header>
-          <ion-label>First Plastic Bottle</ion-label>
-        </ion-card-header>
-        <ion-card-content>
-          <img src="https://freeiconshop.com/wp-content/uploads/edd/water-bottle-flat.png" style="width: 100px; filter:blur(); -webkit-filter: grayscale(1);">
-          <ion-label>Congratulations! You have recycled your first plastic bottle!</ion-label>
-        </ion-card-content>
-      </ion-card>
-    </ion-col>
-    <ion-col [size]="3">
-      <ion-card>
-      <ion-card-header>
-        <ion-label>First Glass Material</ion-label>
-      </ion-card-header>
-      <ion-card-content>
-        <img src="https://freeiconshop.com/wp-content/uploads/edd/wine-glass-flat.png" style="width: 100px;">
-        <ion-label>Congratulations! You have recycled your first plastic bottle!</ion-label>
-      </ion-card-content>
-      </ion-card>
-    </ion-col>
-    <ion-col [size]="3">
-      <ion-card>
-        <ion-card-header>
-          <ion-label>First Glass Material</ion-label>
-        </ion-card-header>
-        <ion-card-content>
-          <img src="https://cdn.iconscout.com/icon/premium/png-256-thumb/tin-37-784658.png" style="width: 100px;">
-          <ion-label>Congratulations! You have recycled your first plastic bottle!</ion-label>
-        </ion-card-content>
-      </ion-card>
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col [size]="4"><img src="https://img.icons8.com/color/48/000000/recycle-sign.png"></ion-col>
-    <ion-col [size]="4"></ion-col>
-    <ion-col [size]="4"></ion-col>
-  </ion-row>
-</ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col  *ngFor="let achi of achiev">
+        <img src={{achi.url}} (click)="presentAlert(achi)" style="width: 100px; filter:grayscale(100%)" *ngIf="achi.isActive">
+        <img src={{achi.url}} (click)="presentAlert(achi)" style="width: 100px; filter:grayscale(0%)" *ngIf="!achi.isActive">
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col [size]="4"><img src="https://img.icons8.com/color/48/000000/recycle-sign.png"></ion-col>
+      <ion-col [size]="4"></ion-col>
+      <ion-col [size]="4"></ion-col>
+    </ion-row>
+  </ion-grid>
 </ion-content>
