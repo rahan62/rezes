@@ -5,5 +5,6 @@ import { Injectable } from '@angular/core';
 })
 export class GlobalDataServiceService {
     public data: any;
+    public userType: any;
   constructor() { }
 }

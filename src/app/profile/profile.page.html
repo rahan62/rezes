@@ -15,7 +15,16 @@
                         <ion-icon name="contact" size="large"></ion-icon>
                     </ion-card-header>
                     <ion-card-content text-center>
-                        {{currentUser.currentUsername}}
+                                {{currentUser}}
+                                <ngx-qrcode
+                                        [qrc-element-type]="currentUser"
+                                        [qrc-value] = "currentUser"
+                                        qrc-class = "aclass"
+                                        qrc-errorCorrectionLevel = "L">
+                                </ngx-qrcode>
+
+
+
                     </ion-card-content>
                 </ion-card>
             </ion-col>
@@ -23,9 +32,5 @@
 
         </ion-row>
     </ion-grid>
-<ion-row>
-    <ion-item>
-        <qrcode [qrdata]="myAngularxQrCode" [size]="256" [level]="'M'"></qrcode>
-    </ion-item>
-</ion-row>
+
 </ion-content>

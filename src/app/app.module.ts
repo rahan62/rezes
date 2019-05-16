@@ -15,9 +15,8 @@ import {AngularFireModule} from '@angular/fire';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {firebaseConfig} from '../environments/environment';
 
-import { QRCodeModule } from 'angularx-qrcode';
-import {FormsModule} from '@angular/forms';
-
+import { QRCodeModule } from 'angular2-qrcode';
+import { NgxQRCodeModule } from 'ngx-qrcode2';
 @NgModule({
     declarations: [AppComponent],
     entryComponents: [],
@@ -28,8 +27,8 @@ import {FormsModule} from '@angular/forms';
         AngularFireDatabaseModule, // imports firebase/database, only needed for database features
         AngularFireAuthModule, // imports firebase/auth, only needed for auth features
         AppRoutingModule,
-        FormsModule,
-        QRCodeModule
+        QRCodeModule,
+        NgxQRCodeModule
     ],
     providers: [
         StatusBar,

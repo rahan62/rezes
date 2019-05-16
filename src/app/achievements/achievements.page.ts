@@ -16,7 +16,7 @@ export class AchievementsPage implements OnInit {
                 public alertController: AlertController,
                 public globaldata: GlobalDataServiceService) {
         this.currentUser = globaldata.data;
-        console.log(this.currentUser.currentUsername.toString())
+        console.log(this.currentUser.toString())
         this.db.list('app_content/achievements/').snapshotChanges().subscribe(items => {
             this.achiev = items.map(item => {
                 return item.payload.val();

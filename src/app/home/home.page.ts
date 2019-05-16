@@ -21,7 +21,7 @@ export class HomePage implements OnInit {
                 public router: Router,
                 public db: AngularFireDatabase) {
         this.currentUser = globaldata.data;
-        console.log(this.currentUser.currentUsername.toString());
+        console.log(this.currentUser.toString());
 
         this.db.list('transactions/').snapshotChanges().subscribe(items => {
             this.transactions = items.map(item => {
@@ -58,7 +58,7 @@ export class HomePage implements OnInit {
         this.menuCtrl.open();
         console.log('debug');
         if (!this.globaldata.data) {
-            this.router.navigateByUrl('/login');
+            this.router.navigateByUrl('login');
         }
         console.log('ionViewWillLeave');
         this.calculateMetal();
@@ -71,7 +71,7 @@ export class HomePage implements OnInit {
     calculateMetal() {
         for (let i = 0; i < this.transactions.length; i++) {
             console.log(this.transactions[i].userName);
-            if (this.transactions[i].userName === this.currentUser.currentUsername) {
+            if (this.transactions[i].userName === this.currentUser) {
                 this.metalCount += parseInt(this.transactions[i].metal, 10);
             }
         }
@@ -79,7 +79,7 @@ export class HomePage implements OnInit {
     calculatePlastic() {
         for (let i = 0; i < this.transactions.length; i++) {
             console.log(this.transactions[i].userName);
-            if (this.transactions[i].userName === this.currentUser.currentUsername) {
+            if (this.transactions[i].userName === this.currentUser) {
                 this.plasticCount += parseInt(this.transactions[i].plastic, 10);
             }
         }
@@ -87,9 +87,13 @@ export class HomePage implements OnInit {
     calculateGlass() {
         for (let i = 0; i < this.transactions.length; i++) {
             console.log(this.transactions[i].userName);
-            if (this.transactions[i].userName === this.currentUser.currentUsername) {
+            if (this.transactions[i].userName === this.currentUser) {
                 this.glassCount += parseInt(this.transactions[i].glass, 10);
             }
         }
+    }
+    addNewOperation() {
+        this.globaldata.data = this.currentUser;
+        this.router.navigateByUrl('/add-operation');
     }
 }

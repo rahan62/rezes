@@ -19,8 +19,12 @@ const routes: Routes = [
   { path: 'register', loadChildren: './register/register.module#RegisterPageModule' },
   { path: 'profile', loadChildren: './profile/profile.module#ProfilePageModule' },
   { path: 'about', loadChildren: './about/about.module#AboutPageModule' },
-  { path: 'operation', loadChildren: './operation/operation.module#OperationPageModule' },  { path: 'opreation-history', loadChildren: './opreation-history/opreation-history.module#OpreationHistoryPageModule' },
-  { path: 'achievements', loadChildren: './achievements/achievements.module#AchievementsPageModule' }
+  { path: 'operation', loadChildren: './operation/operation.module#OperationPageModule' },
+  { path: 'opreation-history', loadChildren: './opreation-history/opreation-history.module#OpreationHistoryPageModule' },
+  { path: 'achievements', loadChildren: './achievements/achievements.module#AchievementsPageModule' },
+  { path: 'add-operation', loadChildren: './add-operation/add-operation.module#AddOperationPageModule' },
+  { path: 'leaderboards', loadChildren: './leaderboards/leaderboards.module#LeaderboardsPageModule' },  { path: 'home-admin', loadChildren: './home-admin/home-admin.module#HomeAdminPageModule' }
+
 
 ];
 

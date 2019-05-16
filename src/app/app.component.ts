@@ -18,11 +18,6 @@ export class AppComponent {
             icon: 'home'
         },
         {
-            title: 'List',
-            url: '/list',
-            icon: 'list'
-        },
-        {
             title: 'Profile',
             url: '/profile',
             icon: 'contact'
@@ -36,6 +31,11 @@ export class AppComponent {
             title: 'Achievements',
             url: '/achievements',
             icon: 'add-circle-outline'
+        },
+        {
+            title: 'LeaderBoards',
+            url: '/leaderboards',
+            icon: 'trophy'
         }
     ];
 

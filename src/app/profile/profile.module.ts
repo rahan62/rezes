@@ -8,6 +8,7 @@ import {IonicModule} from '@ionic/angular';
 import {ProfilePage} from './profile.page';
 
 import {QRCodeModule} from 'angularx-qrcode';
+import {NgxQRCodeModule} from 'ngx-qrcode2';
 
 const routes: Routes = [
     {
@@ -22,7 +23,8 @@ const routes: Routes = [
         FormsModule,
         IonicModule,
         RouterModule.forChild(routes),
-        QRCodeModule
+        QRCodeModule,
+        NgxQRCodeModule
     ],
     declarations: [ProfilePage]
 })

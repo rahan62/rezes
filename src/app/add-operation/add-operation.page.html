@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>add-operation</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <ngx-qrcode
+                [qrc-element-type]="encodeData"
+                [qrc-value] = "encodeData"
+                qrc-class = "aclass"
+                qrc-errorCorrectionLevel = "L">
+        </ngx-qrcode>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>

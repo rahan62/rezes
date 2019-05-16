@@ -2,9 +2,9 @@
     <ion-toolbar>
         <ion-row>
             <ion-title>
-                Welcome {{currentUser.currentUsername}} !
+                Welcome {{currentUser}} !
             </ion-title>
-            <ion-icon size="large" name="add-circle" balanced></ion-icon>
+            <ion-icon size="large" name="add-circle" (click)="addNewOperation()" balanced></ion-icon>
         </ion-row>
 
     </ion-toolbar>

@@ -8,10 +8,11 @@ import {GlobalDataServiceService} from '../global-data-service.service';
     styleUrls: ['./leaderboards.page.scss'],
 })
 export class LeaderboardsPage implements OnInit {
-    public users: any = [];
+    public users: any;
     public currentUsername: any;
     public points: any = [];
     public totalPoints: any;
+    public sortedUsers: any;
 
     constructor(public db: AngularFireDatabase,
                 public globalData: GlobalDataServiceService) {
@@ -21,35 +22,11 @@ export class LeaderboardsPage implements OnInit {
             });
         });
         this.currentUsername = this.globalData.data;
+        console.log(this.currentUsername);
         console.log(this.users);
 
-        for (let i = 0; i < this.users.length; i++) {
-            this.points.push(this.users[i].totalPoints);
-        }
-        console.log(this.points);
-        this.totalPoints = this.sortPointsArray(this.points);
     }
-
     ngOnInit() {
-
-    }
-    ionViewDidEnter(){
-        this.currentUsername = this.globalData.data;
-        console.log(this.users);
-
-        for (let i = 0; i < this.users.length; i++) {
-            this.points.push(this.users[i].totalPoints);
-        }
-        console.log(this.points);
-        this.totalPoints = this.sortPointsArray(this.points);
-    }
-    ionViewWillEnter() {
-
-
-    }
-
-    sortPointsArray(points) {
-    const sortedArray = points.sort();
-    return sortedArray;
+        this.sortedUsers = this.users.sort((a, b) => a.totalPoints.localeCompare(b.totalPoints));
     }
 }

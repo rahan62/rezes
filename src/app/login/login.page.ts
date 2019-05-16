@@ -34,13 +34,17 @@ export class LoginPage implements OnInit {
     login() {
         if (this.username !== '' && this.password !== '') {
             for (let i = 0; i < this.users.length; i++) {
-                if (this.users[i].username === this.username && this.users[i].password === this.password) {
+                if (this.users[i].username === this.username && this.users[i].password === this.password && this.users[i].type === 'customer') {
                     console.log('login succesful!');
                     alert('login succesful!');
-                    this.globaldata.data = {
-                        'currentUsername': this.username
-                    };
+                    this.globaldata.data = this.username;
+                    this.globaldata.userType = 'customer';
                     this.router.navigateByUrl('home');
+                } else if (this.users[i].username === this.username && this.users[i].password === this.password && this.users[i].type === 'admin') {
+                    console.log('admin login');
+                    this.globaldata.data = this.username;
+                    this.globaldata.userType = 'admin';
+                    this.router.navigateByUrl('home-admin');
                 }
             }
         } else {
