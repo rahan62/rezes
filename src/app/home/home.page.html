@@ -4,7 +4,7 @@
             <ion-title>
                 Welcome {{currentUser}} !
             </ion-title>
-            <ion-icon size="large" name="add-circle" (click)="addNewOperation()" balanced></ion-icon>
+            <ion-icon size="large" name="add-circle" class="text_white" (click)="addNewOperation()" balanced></ion-icon>
         </ion-row>
 
     </ion-toolbar>
@@ -31,7 +31,7 @@
             <ion-col>
                 <ion-card>
                     <ion-card-header>
-                        <ion-label>Geri Dönüşüme Katılam Metal</ion-label>
+                        <ion-label>Geri Dönüşüme Katılan Metal</ion-label>
                     </ion-card-header>
                     <ion-card-content>
                         <circle-progress [percent]="metalCount"
@@ -54,7 +54,7 @@
             <ion-col>
                 <ion-card>
                     <ion-card-header>
-                        <ion-label>Geri Dönüşüme Katılam Plastik</ion-label>
+                        <ion-label>Geri Dönüşüme Katılan Plastik</ion-label>
                     </ion-card-header>
                     <ion-card-content>
                         <circle-progress [percent]="plasticCount"
@@ -77,7 +77,7 @@
             <ion-col>
                 <ion-card>
                     <ion-card-header>
-                        <ion-label>Geri Dönüşüme Katılam Cam</ion-label>
+                        <ion-label>Geri Dönüşüme Katılan Cam</ion-label>
                     </ion-card-header>
                     <ion-card-content>
                         <circle-progress [percent]="glassCount"

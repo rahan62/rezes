@@ -20,6 +20,7 @@ export class OperationPage implements OnInit {
             this.transactions = items.map(item => {
                     return item.payload.val();
             });
+            this.listPreviousTransactions();
         });
         this.db.list('users1/').snapshotChanges().subscribe(items => {
             this.users = items.map(item => {
@@ -28,46 +29,32 @@ export class OperationPage implements OnInit {
         });
         this.currentUser = this.globaldata.data;
         console.log(this.currentUser);
+
     }
     ionViewDidEnter() {
-        this.listPreviousTransactions();
+
     }
     ionViewDidLoad() {
-        this.listPreviousTransactions();
+
     }
     ionviewWillEnter() {
-        this.db.list('transactions/').snapshotChanges().subscribe(items => {
-            this.transactions = items.map(item => {
-                return item.payload.val();
-            });
-        });
-        for (let i = 0; i < this.transactions.length ; i++) {
-            if (this.transactions[i].userName === this.globaldata.data) {
-                this.userTrans.push(this.transactions[i]);
-            }
-        }
+        // this.db.list('transactions/').snapshotChanges().subscribe(items => {
+        //     this.transactions = items.map(item => {
+        //         return item.payload.val();
+        //     });
+        // });
+        // for (let i = 0; i < this.transactions.length ; i++) {
+        //     if (this.transactions[i].userName === this.globaldata.data) {
+        //         this.userTrans.push(this.transactions[i]);
+        //     }
+        // }
     }
     ngOnInit() {
         if (!this.globaldata.data) {
             this.router.navigateByUrl('login');
         }
-        this.db.list('transactions/').snapshotChanges().subscribe(items => {
-            this.transactions = items.map(item => {
-                return item.payload.val();
-            });
-        });
-        for (let i = 0; i < this.transactions.length ; i++) {
-            if (this.transactions[i].userName === this.currentUser) {
-                this.userTrans.push(this.transactions[i]);
-            }
-        }
     }
     listPreviousTransactions() {
-        this.db.list('transactions/').snapshotChanges().subscribe(items => {
-            this.transactions = items.map(item => {
-                return item.payload.val();
-            });
-        });
         for (let i = 0; i < this.transactions.length ; i++) {
             if (this.transactions[i].userName === this.globaldata.data) {
                 this.userTrans.push(this.transactions[i]);

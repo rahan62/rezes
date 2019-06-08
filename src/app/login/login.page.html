@@ -1,45 +1,51 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>REZES</ion-title>
+    <ion-toolbar>
+        <ion-title>REZES</ion-title>
 
-  </ion-toolbar>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content padding>
-<ion-grid>
-  <ion-row>
-    <ion-col>
+    <ion-grid>
+        <ion-row justify-content-center="">
+            <ion-card>
+                <ion-card-header>
+                    <ion-grid>
+                        <ion-row justify-content-center="">
+                            <ion-icon class="icon-class" src="../../assets/Logo/rezes-logo-mini.svg"></ion-icon>
+                        </ion-row>
+                    </ion-grid>
 
-    </ion-col>
-    <ion-col>
-      <ion-row padding justify-content-center>
-        <ion-icon class="icon-class" src="../../assets/Logo/rezes-logo-mini.svg"></ion-icon>
-      </ion-row>
-      <ion-row>
-        <ion-label padding>Username</ion-label>
-        <ion-input [(ngModel)]="username" padding class="input-class" placeholder="Username"></ion-input>
-      </ion-row>
-      <ion-row>
-        <ion-label padding>Password</ion-label>
-        <ion-input [(ngModel)]="password" padding class="input-class" placeholder="Password" type="password" (keyup.enter)="login()"></ion-input>
-      </ion-row>
+                </ion-card-header>
+                <ion-card-content>
+                    <ion-grid>
+                        <ion-row justify-content-center="">
+                            <ion-label padding>Username</ion-label>
+                            <ion-input [(ngModel)]="username" padding class="input-class"
+                                       placeholder="Username"></ion-input>
+                        </ion-row>
+                        <ion-row justify-content-center="">
+                            <ion-label padding>Password</ion-label>
+                            <ion-input [(ngModel)]="password" padding class="input-class" placeholder="Password"
+                                       type="password" (keyup.enter)="login()"></ion-input>
+                        </ion-row>
+                    </ion-grid>
+                </ion-card-content>
+                <ion-card-subtitle style="height: 100px;">
+                    <ion-grid>
+                        <ion-row justify-content-center="">
+                            <ion-button style="width: 135px" padding class="button-class" routerDirection="forward"
+                                        (click)=" login()" required>Login
+                            </ion-button>
+                            <ion-button style="width: 135px" padding class="button-class" routerDirection="forward"
+                                        routerLink="/register">Register
+                            </ion-button>
+                        </ion-row>
+                    </ion-grid>
+                </ion-card-subtitle>
+            </ion-card>
+        </ion-row>
 
-    </ion-col>
-    <ion-col>
 
-    </ion-col>
-  </ion-row>
-  <ion-row>
-    <ion-col>
-
-    </ion-col>
-    <ion-col>
-      <ion-button padding class="button-class" routerDirection="forward" (click)=" login()" required>Login</ion-button>
-      <ion-button padding class="button-class" routerDirection="forward" routerLink="/register">Register</ion-button>
-    </ion-col>
-    <ion-col>
-
-    </ion-col>
-  </ion-row>
-</ion-grid>
+    </ion-grid>
 </ion-content>

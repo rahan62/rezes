@@ -12,28 +12,60 @@
             </ion-col>
             <ion-col>
                 <ion-row>
-                    <ion-label padding>Username</ion-label>
-                    <ion-input padding [(ngModel)]="username" class="input-class" placeholder="Identity"></ion-input>
+                    <ion-col [size]="6">
+                        <ion-label class="input-class" padding>Username</ion-label>
+                    </ion-col>
+                    <ion-col [size]="6">
+                        <ion-input padding [(ngModel)]="username" class="input-class" placeholder="Username"></ion-input>
+                    </ion-col>
+
+
                 </ion-row>
                 <ion-row>
-                    <ion-label padding>Name</ion-label>
-                    <ion-input padding [(ngModel)]="name" class="input-class" placeholder="Name"></ion-input>
+                    <ion-col [size]="6">
+                        <ion-label padding>Name</ion-label>
+                    </ion-col>
+                    <ion-col [size]="6">
+                        <ion-input padding [(ngModel)]="name" class="input-class" placeholder="Name"></ion-input>
+                    </ion-col>
+
+
                 </ion-row>
                 <ion-row>
-                    <ion-label padding>Surname</ion-label>
-                    <ion-input padding [(ngModel)]="surname" class="input-class" placeholder="Surname"></ion-input>
+                    <ion-col [size]="6">
+                        <ion-label padding>Surname</ion-label>
+                    </ion-col>
+                    <ion-col [size]="6">
+                        <ion-input padding [(ngModel)]="surname" class="input-class" placeholder="Surname"></ion-input>
+                    </ion-col>
+
+
                 </ion-row>
                 <ion-row>
-                    <ion-label padding>Password</ion-label>
-                    <ion-input padding [(ngModel)]="password" type="password" class="input-class" placeholder="Password"></ion-input>
+                    <ion-col [size]="6">
+                        <ion-label padding>Password</ion-label>
+                    </ion-col>
+                    <ion-col [size]="6">
+                        <ion-input padding [(ngModel)]="password" type="password" class="input-class" placeholder="Password"></ion-input>
+                    </ion-col>
+
+
                 </ion-row>
                 <ion-row>
-                    <ion-label padding>E-Mail</ion-label>
-                    <ion-input padding [(ngModel)]="email" class="input-class" placeholder="E-Mail"></ion-input>
+                    <ion-col [size]="6">
+                        <ion-label padding>E-Mail</ion-label>
+                    </ion-col>
+                    <ion-col [size]="6">
+                        <ion-input padding [(ngModel)]="email" class="input-class" placeholder="E-Mail"></ion-input>
+                    </ion-col>
                 </ion-row>
                 <ion-row>
-                    <ion-label padding>Identity</ion-label>
-                    <ion-input padding [(ngModel)]="identity" class="input-class" placeholder="Identity" (keyup.enter)="createUser()"></ion-input>
+                    <ion-col [size]="6">
+                        <ion-label padding>Identity</ion-label>
+                    </ion-col>
+                    <ion-col [size]="6">
+                        <ion-input padding [(ngModel)]="identity" class="input-class" placeholder="Identity" (keyup.enter)="createUser()"></ion-input>
+                    </ion-col>
                 </ion-row>
 
             </ion-col>

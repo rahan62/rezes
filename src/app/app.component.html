@@ -9,15 +9,21 @@
       <ion-content>
         <ion-list>
           <ion-menu-toggle auto-hide="false" *ngFor="let p of appPages">
-            <ion-item [routerDirection]="'root'" [routerLink]="[p.url]">
-              <ion-icon slot="start" [name]="p.icon"></ion-icon>
-              <ion-label>
+            <ion-item class="leftMenuTextColor" [routerDirection]="'root'" [routerLink]="[p.url]">
+              <ion-icon class="leftMenuTextColor" slot="start" [name]="p.icon"></ion-icon>
+              <ion-label class="leftMenuTextColor">
                 {{p.title}}
               </ion-label>
             </ion-item>
           </ion-menu-toggle>
+
         </ion-list>
       </ion-content>
+      <ion-footer>
+        <ion-button class="logoutButton" (click)="logout()">
+          Logout
+        </ion-button>
+      </ion-footer>
     </ion-menu>
     <ion-router-outlet main></ion-router-outlet>
   </ion-split-pane>

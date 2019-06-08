@@ -1,19 +1,47 @@
 <ion-header>
-  <ion-toolbar>
-    <ion-title>leaderboards</ion-title>
-  </ion-toolbar>
+    <ion-toolbar>
+        <ion-title>Leaderboards</ion-title>
+    </ion-toolbar>
 </ion-header>
 
 <ion-content>
-<ion-grid>
-  <ion-row *ngFor="let item of users">
-    <ion-col>
-        {{item.email}}
-    </ion-col>
-    <ion-col>
-      {{item.totalPoints}}
-    </ion-col>
+    <ion-list>
+        <ion-grid>
+            <ion-row justify-content-center="">
+                <ion-card>
+                    <ion-card-header>
+                        <ion-row justify-content-center="">
+                            <ion-img src="../../assets/icon/277705.png" style="width: 20%; height: 20%;"></ion-img>
+                        </ion-row>
+                        <ion-row justify-content-center="">
+                            This month's most green user.
+                        </ion-row>
 
-  </ion-row>
-</ion-grid>
+                    </ion-card-header>
+                    <ion-card-content>
+                        {{leader.name + " " + leader.surname}}
+                    </ion-card-content>
+                </ion-card>
+            </ion-row>
+        </ion-grid>
+        <ion-card>
+            <ion-card-content>
+                <ion-grid>
+                    <ion-row class="outlinedRow" *ngFor="let item of users" justify-content-center="">
+
+                        <ion-col text-md-start="">
+                            {{item.name + " " + item.surname}}
+                        </ion-col>
+
+                        <ion-col text-md-end="">
+                            {{item.totalPoints}}
+                        </ion-col>
+                    </ion-row>
+                </ion-grid>
+
+            </ion-card-content>
+        </ion-card>
+
+
+    </ion-list>
 </ion-content>

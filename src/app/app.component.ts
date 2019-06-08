@@ -1,8 +1,10 @@
 import {Component} from '@angular/core';
 
-import {Platform} from '@ionic/angular';
+import {MenuController, NavController, Platform} from '@ionic/angular';
 import {SplashScreen} from '@ionic-native/splash-screen/ngx';
 import {StatusBar} from '@ionic-native/status-bar/ngx';
+import {Router} from '@angular/router';
+import {initializeApp} from 'firebase';
 
 
 @Component({
@@ -33,7 +35,7 @@ export class AppComponent {
             icon: 'add-circle-outline'
         },
         {
-            title: 'LeaderBoards',
+            title: 'Leaderboards',
             url: '/leaderboards',
             icon: 'trophy'
         }
@@ -43,6 +45,9 @@ export class AppComponent {
         private platform: Platform,
         private splashScreen: SplashScreen,
         private statusBar: StatusBar,
+        public navCtrl: NavController,
+        public menuCtrl: MenuController,
+        public router: Router
     ) {
         this.initializeApp();
     }
@@ -52,5 +57,10 @@ export class AppComponent {
             this.statusBar.styleDefault();
             this.splashScreen.hide();
         });
+    }
+    logout() {
+        this.router.navigateByUrl('/login')
+        this.menuCtrl.close();
+        this.menuCtrl.enable(false);
     }
 }

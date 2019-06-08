@@ -15,6 +15,8 @@ export class HomePage implements OnInit {
     public metalCount = 0;
     public plasticCount = 0;
     public glassCount = 0;
+    public users: any;
+    public currentPoint = 0;
 
     constructor(public menuCtrl: MenuController,
                 public globaldata: GlobalDataServiceService,
@@ -27,32 +29,18 @@ export class HomePage implements OnInit {
             this.transactions = items.map(item => {
                 return item.payload.val();
             });
+            this.calculateMetal();
+            this.calculateGlass();
+            this.calculatePlastic();
+        });
+        this.db.list('users1/').snapshotChanges().subscribe(items => {
+            this.users = items.map(user => {
+                return user.payload.val();
+            });
+            this.getCurrentScore();
         });
     }
-    ionViewDidEnter() {
-        console.log('ionViewDidEnter');
-        this.calculateMetal();
-        this.calculateGlass();
-        this.calculatePlastic();
-    }
-    ionViewDidLoad() {
-        console.log('ionViewDidLoad');
-        this.calculateMetal();
-        this.calculateGlass();
-        this.calculatePlastic();
-    }
-    ionViewWillEnter() {
-        console.log('ionViewWillEnter');
-        this.calculateMetal();
-        this.calculateGlass();
-        this.calculatePlastic();
-    }
-    ionViewWillLeave() {
-        console.log('ionViewWillLeave');
-        this.calculateMetal();
-        this.calculateGlass();
-        this.calculatePlastic();
-    }
+
     ngOnInit() {
         this.menuCtrl.enable(true);
         this.menuCtrl.open();
@@ -60,10 +48,6 @@ export class HomePage implements OnInit {
         if (!this.globaldata.data) {
             this.router.navigateByUrl('login');
         }
-        console.log('ionViewWillLeave');
-        this.calculateMetal();
-        this.calculateGlass();
-        this.calculatePlastic();
 
     }
 
@@ -76,6 +60,7 @@ export class HomePage implements OnInit {
             }
         }
     }
+
     calculatePlastic() {
         for (let i = 0; i < this.transactions.length; i++) {
             console.log(this.transactions[i].userName);
@@ -84,6 +69,7 @@ export class HomePage implements OnInit {
             }
         }
     }
+
     calculateGlass() {
         for (let i = 0; i < this.transactions.length; i++) {
             console.log(this.transactions[i].userName);
@@ -92,8 +78,17 @@ export class HomePage implements OnInit {
             }
         }
     }
+
     addNewOperation() {
         this.globaldata.data = this.currentUser;
         this.router.navigateByUrl('/add-operation');
+    }
+
+    getCurrentScore() {
+        for (let i = 0; i < this.users.length; i++) {
+            if (this.users[i].username === this.currentUser) {
+                this.currentPoint = this.users[i].totalPoints;
+            }
+        }
     }
 }

@@ -5,57 +5,77 @@
 </ion-header>
 
 <ion-content>
-    <ion-grid>
-        <ion-row>
-            <ion-col>
+    <ion-card>
+        <ion-card-header>
 
-            </ion-col>
-        </ion-row>
-        <ion-row>
-            <ion-col><ion-item>Tarih</ion-item></ion-col>
-            <ion-col><ion-item>Metal</ion-item></ion-col>
-            <ion-col><ion-item>Plastik</ion-item></ion-col>
-            <ion-col><ion-item>Cam</ion-item></ion-col>
-            <ion-col><ion-item>Tanımlanamayan</ion-item></ion-col>
-            <ion-col><ion-item>Makina</ion-item></ion-col>
-        </ion-row>
-        <ion-row *ngFor="let op of userTrans">
-            <ion-col>
-                <ion-item>
-                    {{op.date}}
-                </ion-item>
+        </ion-card-header>
+        <ion-card-content>
+            <ion-grid>
+                <ion-row>
+                    <ion-col>
 
-            </ion-col>
-            <ion-col>
-                <ion-item>
-                    {{op.metal}}
-                </ion-item>
+                    </ion-col>
+                </ion-row>
+                <ion-row>
+                    <ion-col>
+                        <ion-item>Tarih</ion-item>
+                    </ion-col>
+                    <ion-col>
+                        <ion-item>Metal</ion-item>
+                    </ion-col>
+                    <ion-col>
+                        <ion-item>Plastik</ion-item>
+                    </ion-col>
+                    <ion-col>
+                        <ion-item>Cam</ion-item>
+                    </ion-col>
+                    <ion-col>
+                        <ion-item>Tanımlanamayan</ion-item>
+                    </ion-col>
+                    <ion-col>
+                        <ion-item>Makina</ion-item>
+                    </ion-col>
+                </ion-row>
+                <ion-row class="outlinedRow" *ngFor="let op of userTrans">
+                    <ion-col>
+                        <ion-item>
+                            {{op.date | date: 'dd/MM/yyyy HH:mm'}}
+                        </ion-item>
 
-            </ion-col>
-            <ion-col>
-                <ion-item>
-                    {{op.plastic}}
-                </ion-item>
+                    </ion-col>
+                    <ion-col>
+                        <ion-item>
+                            {{op.metal}}
+                        </ion-item>
 
-            </ion-col>
-            <ion-col>
-                <ion-item>
-                    {{op.glass}}
-                </ion-item>
+                    </ion-col>
+                    <ion-col>
+                        <ion-item>
+                            {{op.plastic}}
+                        </ion-item>
 
-            </ion-col>
-            <ion-col>
-                <ion-item>
-                    {{op.unidentified}}
-                </ion-item>
+                    </ion-col>
+                    <ion-col>
+                        <ion-item>
+                            {{op.glass}}
+                        </ion-item>
 
-            </ion-col>
-            <ion-col>
-                <ion-item>
-                    {{op.machineName}}
-                </ion-item>
+                    </ion-col>
+                    <ion-col>
+                        <ion-item>
+                            {{op.unidentified}}
+                        </ion-item>
 
-            </ion-col>
-        </ion-row>
-    </ion-grid>
+                    </ion-col>
+                    <ion-col>
+                        <ion-item>
+                            {{op.machineName}}
+                        </ion-item>
+
+                    </ion-col>
+                </ion-row>
+            </ion-grid>
+        </ion-card-content>
+    </ion-card>
+
 </ion-content>

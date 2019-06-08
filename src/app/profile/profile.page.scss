@@ -1,6 +1,13 @@
 ion-card {
   justify-content: center;
+  border: 2px solid #0ec254;
 }
 .border {
   border-top: solid 1px #125a05;
+}
+ion-card-subtitle {
+  border-top: solid 2px #0ec254;
+}
+ion-card-header {
+  background: #0ec254;
 }

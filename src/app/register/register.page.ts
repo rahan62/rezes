@@ -46,7 +46,8 @@ export class RegisterPage implements OnInit {
                 'password': this.password,
                 'email': this.email,
                 'identity': this.identity,
-                'type': 'customer'
+                'type': 'customer',
+                'totalPoints': 0
             };
 
         }

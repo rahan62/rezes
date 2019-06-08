@@ -25,6 +25,22 @@ ion-content
 ion-menu
 {
   --ion-background-color: #125a05;
-
+  color: #ffffff;
+}
+ion-menu-toggle {
+  color: #ffffff;
+}
+.leftMenuTextColor {
+  color: #ffffff;
 }
 
+.logoutButton {
+  display: block;
+  color: #ffffff;
+  --ion-background-color: #0ec254;
+  background-color: #0ec254;
+  --background: #0ec254;
+}
+.text_white {
+  color: #ffffff;
+}
