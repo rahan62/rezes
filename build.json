@@ -1,0 +1,18 @@
+{
+  "android": {
+    "debug": {
+      "keystore": "debug.keystore",
+      "storePassword": "android",
+      "alias": "sensboard",
+      "password" : "CaCaasD123..Malatya44..",
+      "keystoreType": ""
+    },
+    "release": {
+      "keystore": "rezeskey.keystore",
+      "storePassword": "mt724rwpd9",
+      "alias": "rezes",
+      "password" : "mt724rwpd9",
+      "keystoreType": ""
+    }
+  }
+}
